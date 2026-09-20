@@ -1,0 +1,108 @@
+/* ==========================================
+   Section 04 — Engineered
+   ========================================== */
+
+.eng {
+  background: var(--color-cream);
+  padding: 160px 0 140px;
+}
+
+.eng__inner {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Header */
+.eng__header {
+  position: sticky;
+  top: 140px;
+}
+
+.eng__label {
+  display: block;
+  color: var(--color-warm-gray);
+  margin-bottom: 32px;
+}
+
+.eng__heading {
+  color: var(--color-near-black);
+}
+
+/* Spec list */
+.eng__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.eng__item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  padding: 36px 0;
+  border-top: 1px solid rgba(17, 17, 15, 0.08);
+  align-items: start;
+}
+
+.eng__item:last-child {
+  border-bottom: 1px solid rgba(17, 17, 15, 0.08);
+}
+
+.eng__item-num {
+  color: var(--color-metal);
+  padding-top: 2px;
+}
+
+.eng__item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eng__item-title {
+  color: var(--color-near-black);
+}
+
+.eng__item-desc {
+  max-width: 440px;
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 1024px) {
+  .eng {
+    padding: 120px 0 100px;
+  }
+
+  .eng__inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .eng__header {
+    position: static;
+  }
+
+  .eng__heading br {
+    display: none;
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 768px) {
+  .eng {
+    padding: 96px 0 80px;
+  }
+
+  .eng__inner {
+    gap: 40px;
+  }
+
+  .eng__item {
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    padding: 28px 0;
+  }
+}

@@ -1,0 +1,177 @@
+/* ==========================================
+   Section 02 — The Object
+   ========================================== */
+
+.object {
+  background: var(--color-cream);
+  padding: 160px 0 140px;
+}
+
+.object__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Left text */
+.object__text {
+  padding-top: 24px;
+}
+
+.object__label {
+  display: block;
+  color: var(--color-warm-gray);
+  margin-bottom: 32px;
+}
+
+.object__heading {
+  color: var(--color-near-black);
+  margin-bottom: 28px;
+}
+
+.object__body {
+  max-width: 340px;
+  margin-bottom: 48px;
+}
+
+/* Center hero image */
+.object__hero {
+  overflow: hidden;
+}
+
+.object__hero-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* Right materials */
+.object__materials {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0;
+}
+
+.object__mat {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(17, 17, 15, 0.08);
+  padding: 20px 0;
+}
+
+.object__mat:last-child {
+  border-bottom: 1px solid rgba(17, 17, 15, 0.08);
+}
+
+.object__mat-img-wrap {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.object__mat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.object__mat:hover .object__mat-img {
+  transform: scale(1.04);
+}
+
+.object__mat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.object__mat-title {
+  color: var(--color-near-black);
+}
+
+.object__mat-desc {
+  font-size: 0.8125rem;
+  color: var(--color-warm-gray);
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 1024px) {
+  .object {
+    padding: 120px 0 100px;
+  }
+
+  .object__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .object__materials {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .object__mat {
+    flex: 1;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid rgba(17, 17, 15, 0.08);
+    padding: 0 0 0 20px;
+  }
+
+  .object__mat:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 768px) {
+  .object {
+    padding: 96px 0 80px;
+  }
+
+  .object__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .object__hero-img {
+    height: 400px;
+  }
+
+  .object__materials {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .object__mat {
+    border-left: none;
+    border-top: 1px solid rgba(17, 17, 15, 0.08);
+    padding: 20px 0;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .object__mat:last-child {
+    border-bottom: 1px solid rgba(17, 17, 15, 0.08);
+  }
+
+  .object__mat-img-wrap {
+    width: 100px;
+    height: 80px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .object__mat-info {
+    justify-content: center;
+  }
+}

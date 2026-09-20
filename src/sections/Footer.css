@@ -1,0 +1,120 @@
+/* ==========================================
+   Footer
+   ========================================== */
+
+.footer {
+  background: var(--color-near-black);
+  color: var(--color-off-white);
+  padding: 0;
+  border-top: 1px solid rgba(233, 229, 220, 0.06);
+}
+
+.footer__inner {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.footer__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(233, 229, 220, 0.06);
+  margin-bottom: 32px;
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  color: var(--color-off-white);
+  flex-shrink: 0;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 32px;
+}
+
+.footer__link {
+  color: rgba(233, 229, 220, 0.4);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer__link:hover {
+  color: var(--color-off-white);
+}
+
+.footer__social {
+  display: flex;
+  gap: 24px;
+}
+
+.footer__social-link {
+  color: rgba(233, 229, 220, 0.4);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer__social-link:hover {
+  color: var(--color-off-white);
+}
+
+/* Bottom */
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__copy {
+  color: rgba(233, 229, 220, 0.25);
+}
+
+.footer__legal {
+  color: rgba(233, 229, 220, 0.25);
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 900px) {
+  .footer__top {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer__nav {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 768px) {
+  .footer__inner {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .footer__top {
+    gap: 28px;
+    padding-bottom: 32px;
+    margin-bottom: 24px;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer__social {
+    gap: 20px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

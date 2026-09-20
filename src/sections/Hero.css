@@ -1,0 +1,226 @@
+/* ==========================================
+   Hero
+   The product render has a near-black background
+   that blends seamlessly with the section bg,
+   making the speaker appear to sit directly
+   inside the page composition.
+   ========================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  background: #080807;
+  overflow: hidden;
+}
+
+/* ---- Text block — upper left ---- */
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  padding-top: 160px;
+}
+
+.hero__text {
+  max-width: 520px;
+}
+
+.hero__eyebrow {
+  display: block;
+  color: var(--color-metal-light);
+  margin-bottom: 32px;
+}
+
+.hero__headline {
+  color: var(--color-off-white);
+  margin-bottom: 24px;
+}
+
+.hero__body {
+  color: rgba(233, 229, 220, 0.5);
+  max-width: 380px;
+  margin-bottom: 44px;
+  line-height: 1.75;
+}
+
+/* ---- Product — positioned to dominate the visual field ---- */
+
+.hero__product {
+  position: absolute;
+  z-index: 1;
+  right: 6%;
+  bottom: 4%;
+  width: 62%;
+  max-width: 880px;
+  pointer-events: none;
+}
+
+.hero__product img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Radial mask dissolves the image edges into the hero bg.
+     The speaker sits in the center ~50% so it stays fully sharp;
+     the outer dark studio background fades to transparent. */
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 75% at 50% 48%,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 0.5) 65%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 75% at 50% 48%,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 0.5) 65%,
+    transparent 100%
+  );
+}
+
+/* ---- Bottom bar ---- */
+
+.hero__foot {
+  position: absolute;
+  z-index: 3;
+  bottom: 48px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.hero__scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: rgba(233, 229, 220, 0.35);
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 48px;
+  background: rgba(233, 229, 220, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-metal-light);
+  animation: scrollPulse 2.8s var(--ease-in-out) infinite;
+}
+
+@keyframes scrollPulse {
+  0%   { top: -100%; }
+  45%  { top: 100%; }
+  100% { top: 100%; }
+}
+
+.hero__counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(233, 229, 220, 0.35);
+}
+
+.hero__counter-sep {
+  margin: 0 2px;
+}
+
+.hero__counter-line {
+  width: 48px;
+  height: 1px;
+  background: rgba(233, 229, 220, 0.2);
+  margin-left: 12px;
+}
+
+/* ---- Wide desktop ---- */
+
+@media (min-width: 1440px) {
+  .hero__product {
+    right: 8%;
+    width: 56%;
+  }
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 1024px) {
+  .hero__inner {
+    padding-top: 140px;
+  }
+
+  .hero__text {
+    max-width: 420px;
+  }
+
+  .hero__product {
+    width: 60%;
+    right: 0;
+    bottom: 2%;
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+  }
+
+  .hero__inner {
+    padding-top: 120px;
+    flex-shrink: 0;
+  }
+
+  .hero__text {
+    max-width: 100%;
+  }
+
+  .hero__body {
+    max-width: 340px;
+  }
+
+  .hero__product {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    right: auto;
+    bottom: auto;
+    margin: 32px auto 0;
+    padding: 0 var(--margin-outer);
+  }
+
+  .hero__foot {
+    bottom: 32px;
+  }
+
+  .hero__counter-line {
+    width: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__headline {
+    font-size: 2.25rem;
+  }
+
+  .hero__inner {
+    padding-top: 108px;
+  }
+
+  .hero__product {
+    max-width: 320px;
+  }
+}

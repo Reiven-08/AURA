@@ -1,0 +1,150 @@
+/* ==========================================
+   Section 03 — Sound
+   ========================================== */
+
+.sound {
+  position: relative;
+  background: var(--color-near-black);
+  color: var(--color-off-white);
+  padding: 160px 0 120px;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Background */
+.sound__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.sound__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+}
+
+.sound__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 17, 15, 0.6) 0%,
+    rgba(17, 17, 15, 0.3) 50%,
+    rgba(17, 17, 15, 0.7) 100%
+  );
+}
+
+/* Content */
+.sound__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.sound__top {
+  margin-bottom: 80px;
+}
+
+.sound__label {
+  color: var(--color-metal-light);
+}
+
+.sound__main {
+  margin-bottom: 96px;
+}
+
+.sound__heading {
+  margin-bottom: 48px;
+  max-width: 700px;
+}
+
+/* Wave */
+.sound__wave {
+  margin-bottom: 48px;
+  max-width: 800px;
+}
+
+.sound__wave-svg {
+  width: 100%;
+  height: 60px;
+  color: var(--color-metal-light);
+}
+
+.sound__desc {
+  max-width: 420px;
+}
+
+.sound__desc .t-body-sm {
+  color: rgba(233, 229, 220, 0.55);
+}
+
+/* Specs row */
+.sound__specs {
+  display: flex;
+  gap: 80px;
+  border-top: 1px solid rgba(233, 229, 220, 0.1);
+  padding-top: 48px;
+}
+
+.sound__spec {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sound__spec-value {
+  color: var(--color-off-white);
+  font-weight: 300;
+}
+
+.sound__spec-label {
+  color: rgba(233, 229, 220, 0.4);
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 1024px) {
+  .sound {
+    padding: 120px 0 96px;
+    min-height: auto;
+  }
+
+  .sound__specs {
+    gap: 48px;
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 768px) {
+  .sound {
+    padding: 96px 0 80px;
+  }
+
+  .sound__top {
+    margin-bottom: 48px;
+  }
+
+  .sound__main {
+    margin-bottom: 64px;
+  }
+
+  .sound__specs {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .sound__spec {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .sound__spec-value {
+    min-width: 100px;
+  }
+}

@@ -1,0 +1,61 @@
+/* ==========================================
+   Section 07 — Final CTA
+   ========================================== */
+
+.cta {
+  background: var(--color-near-black);
+  color: var(--color-off-white);
+  padding: 180px 0 160px;
+  text-align: center;
+}
+
+.cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 680px;
+}
+
+.cta__label {
+  display: block;
+  color: var(--color-metal);
+  margin-bottom: 40px;
+}
+
+.cta__heading {
+  margin-bottom: 32px;
+}
+
+.cta__body {
+  color: rgba(233, 229, 220, 0.5);
+  max-width: 480px;
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+.cta .btn {
+  color: var(--color-off-white);
+  border-color: rgba(233, 229, 220, 0.25);
+}
+
+.cta .btn:hover {
+  background: var(--color-off-white);
+  color: var(--color-near-black);
+  border-color: var(--color-off-white);
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 120px 0 100px;
+  }
+
+  .cta__label {
+    margin-bottom: 28px;
+  }
+
+  .cta__body {
+    margin-bottom: 40px;
+  }
+}
